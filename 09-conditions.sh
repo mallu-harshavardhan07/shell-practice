@@ -3,7 +3,7 @@
  # -lt --> less than
  # -eq --> equals to
  # -ne --> not equals to
-number =$1
+number=$1
  if [ $number -lt 10 ]
  then
     echo " the number $number is less than 10 "
