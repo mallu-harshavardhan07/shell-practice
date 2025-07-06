@@ -1,0 +1,39 @@
+
+#!/bin/bash
+userid=$(id -u)
+if [ $userid -eq 0 ]
+then
+    echo " you are running with root access "
+else
+    echo " eror : you are not running with root access "
+    exit 1
+fi
+validate(){
+    if [ $1 -eq 0 ]
+    then
+        echo " installing $2 is success "
+    else
+        echo " error occured while installing $2"
+} 
+
+dnf list installed nginx 
+if [ $? -ne 0 ]
+then
+    echo " you are installing nginx "
+    dnf install nginx 
+    validate $? "nginx"
+else 
+     echo " installing nginx  is failure "
+     exit 1
+fi
+
+dnf list installed mysql
+if [ $? -ne 0 ]
+then
+    echo " you are installing mysql "
+    dnf install mysql 
+    validate $? "mysql"
+else 
+     echo " installing mysql  is failure "
+     exit 1
+fi
