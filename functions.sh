@@ -25,7 +25,7 @@ then
     dnf install nginx 
     validate $? "nginx"
 else 
-     echo " installing nginx  is failure "
+     echo " installing nginx  is already installed "
      exit 1
 fi
 
@@ -36,6 +36,6 @@ then
     dnf install mysql 
     validate $? "mysql"
 else 
-     echo " installing mysql  is failure "
+     echo " installing mysql  is aready installed "
      exit 1
 fi
