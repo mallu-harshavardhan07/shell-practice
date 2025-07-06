@@ -4,6 +4,7 @@ userid=$(id -u)
 if [ $id -ne 0]
 then
     echo " error : Run with root access"
+    exit 1
 else
     echo " you are running with root access "
 fi
