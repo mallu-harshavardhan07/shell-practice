@@ -14,6 +14,8 @@ validate(){
         echo " installing $2 is success "
     else
         echo " error occured while installing $2"
+        exit 1
+    fi
 } 
 
 dnf list installed nginx 
